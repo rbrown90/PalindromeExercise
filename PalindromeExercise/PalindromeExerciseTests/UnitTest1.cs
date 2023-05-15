@@ -1,14 +1,21 @@
-using System;
 using Xunit;
+using PalindromeExercise;
+using System;
 
-namespace PalindromeExerciseTests
+namespace Palindrome.Tests
 {
     public class UnitTest1
     {
-        [Fact]
-        public void Test1()
+        [Theory]
+        [InlineData ("noon", true)]
+        [InlineData("Hey", false)]
+        public void PalindromeExervise(string word, bool expected)
         {
+            var test = new WordSmith();
 
+            var actual = test.IsAPalindrome(word);
+
+            Assert.Equal(expected, actual);
         }
     }
 }
